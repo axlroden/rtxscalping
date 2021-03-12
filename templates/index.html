@@ -1,0 +1,35 @@
+{%- extends "base.html" %}
+
+ {% block content %}
+   <div class="container">
+     <div class="scalp">
+        <h1 class="text-center">På lager ved Power.dk</h1>
+     </div>
+     <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Model</th>
+                    <th>Antal</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for item in scalp_values %}
+                <tr>
+                    <td><a href="https://www.power.dk{{ item.url}}">{{ item.title }}</a></td>
+                    <td>{{ item.amount }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="container">
+        </br>
+        <p class="text-center">Der bliver checked for 3060ti, 3070 og 3080.
+        </br>
+        </br><a href="{{ spontit_url }}">Join @rtxscalping på spontit for notifikationer.</a>
+        </br>Eller scan denne QR kode.
+        </br><img src=/static/qr.png></img></p>
+        <p class="text-center"><a class="github-button" href="https://github.com/axlroden/rtxscalping" data-size="large" aria-label="rtxscalping on GitHub">Source</a><script async defer src="https://buttons.github.io/buttons.js"></script></p>
+    </div>
+ {%- endblock %}
